@@ -8,3 +8,4 @@ gradlew.bat
 .pytest_cache/.idea/
 __pycache__/
 *.iml
+*.bak
