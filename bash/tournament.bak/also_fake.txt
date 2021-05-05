@@ -1,0 +1,3 @@
+Blithering Badgers;Courageous Californians;win
+Courageous Californians;Allegoric Alaskans;loss
+Allegoric Alaskans;Blithering Badgers;win

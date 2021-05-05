@@ -1,0 +1,10 @@
+build/
+.idea/
+.gradle/
+gradle/
+gradlew
+gradlew.bat
+.exercism/
+.pytest_cache/.idea/
+__pycache__/
+*.iml
