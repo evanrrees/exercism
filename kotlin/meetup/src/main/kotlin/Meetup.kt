@@ -10,22 +10,15 @@ import java.time.YearMonth
  * @param year the year to represent, from MIN_YEAR to MAX_YEAR.
  * @see MeetupSchedule
  */
-class Meetup(month: Int, year: Int) {
-
-    /** Represents the year and month of this meetup. */
-    private val yearMonth: YearMonth = YearMonth.of(year, month)
+class Meetup(private val month: Int, private val year: Int) {
 
     /** Gets a sequence of the dates in this YearMonth. */
     private val daySequence: Sequence<LocalDate>
-        get() = yearMonth.run { generateSequence(atDay(1)) { it.plusDays(1L) }.take(lengthOfMonth()) }
+        get() = YearMonth.of(year, month).run { generateSequence(atDay(1)) { it.plusDays(1L) }.take(lengthOfMonth()) }
 
     /** Calculates the date of a meetup. */
-    fun day(dayOfWeek: DayOfWeek, schedule: MeetupSchedule) = daySequence.run {
-        when (schedule) {
-            MeetupSchedule.TEENTH -> drop(12).first { it.dayOfWeek == dayOfWeek }
-            MeetupSchedule.LAST -> last { it.dayOfWeek == dayOfWeek }
-            else -> filter { it.dayOfWeek == dayOfWeek }.elementAt(schedule.ordinal)
-        }
-    }
+    fun day(dayOfWeek: DayOfWeek, schedule: MeetupSchedule) = daySequence
+        .filter { it.dayOfWeek == dayOfWeek }
+        .run(schedule.selector)
 
 }
