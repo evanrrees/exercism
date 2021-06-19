@@ -27,6 +27,17 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/kotlin/allergies" />
+        <option name="gradleHome" value="/usr/local/Cellar/gradle/7.0/libexec" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/kotlin/allergies" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/kotlin/anagram" />
         <option name="gradleHome" value="/usr/local/Cellar/gradle/7.0/libexec" />
         <option name="gradleJvm" value="#JAVA_HOME" />
@@ -165,6 +176,28 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/kotlin/luhn" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/kotlin/matrix" />
+        <option name="gradleHome" value="/usr/local/Cellar/gradle/7.0/libexec" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/kotlin/matrix" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/kotlin/meetup" />
+        <option name="gradleHome" value="/usr/local/Cellar/gradle/7.0/libexec" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/kotlin/meetup" />
           </set>
         </option>
       </GradleProjectSettings>
