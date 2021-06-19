@@ -2,11 +2,12 @@ build/
 .idea/
 !/.idea
 .gradle/
-gradle/
-gradlew
-gradlew.bat
+#gradle/
+#gradlew
+#gradlew.bat
 .exercism/
 .pytest_cache/.idea/
 __pycache__/
 *.iml
 *.bak
+.DS_Store
