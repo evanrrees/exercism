@@ -1,6 +1,6 @@
 package subsequence
 
-import org.junit.jupiter.api.Test
+import org.junit.Test
 
 internal class LongestCommonSubstringTest {
 
