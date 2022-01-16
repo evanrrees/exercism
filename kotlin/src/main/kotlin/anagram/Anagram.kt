@@ -2,10 +2,10 @@ package anagram
 
 class Anagram(s: String) {
 
-    private val lower = s.toLowerCase()
+    private val lower = s.lowercase()
     private val target = lower.toList().sorted()
 
     fun match(words: Set<String>) =
-        words.filter { it.toLowerCase().let { w -> w.toList().sorted() == target && w != lower } }.toSet()
+        words.filter { it.lowercase().let { w -> w.toList().sorted() == target && w != lower } }.toSet()
 
 }

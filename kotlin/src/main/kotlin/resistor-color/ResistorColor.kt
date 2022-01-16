@@ -4,8 +4,8 @@ enum class Resistor { BLACK, BROWN, RED, ORANGE, YELLOW, GREEN, BLUE, VIOLET, GR
 
 object ResistorColor {
 
-    fun colorCode(input: String) = Resistor.valueOf(input.toUpperCase()).ordinal
+    fun colorCode(input: String) = Resistor.valueOf(input.uppercase()).ordinal
 
-    fun colors() = Resistor.values().map { it.name.toLowerCase() }
+    fun colors() = Resistor.values().map { it.name.lowercase() }
 
 }

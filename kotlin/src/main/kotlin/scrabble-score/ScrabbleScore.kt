@@ -2,7 +2,7 @@ package `scrabble-score`
 
 object ScrabbleScore {
 
-    private fun scoreLetter(c: Char) = when (c.toUpperCase()) {
+    private fun scoreLetter(c: Char) = when (c.uppercaseChar()) {
         'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'    -> 1
         'D', 'G'                                            -> 2
         'B', 'C', 'M', 'P'                                  -> 3
@@ -13,5 +13,5 @@ object ScrabbleScore {
         else -> throw IllegalArgumentException("Unrecognized character: $c")
     }
 
-    fun scoreWord(word: String) = word.sumBy(ScrabbleScore::scoreLetter)
+    fun scoreWord(word: String) = word.sumOf(ScrabbleScore::scoreLetter)
 }
