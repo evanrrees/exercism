@@ -12,6 +12,8 @@ repositories {
 dependencies {
     implementation("org.tinylog:tinylog-api-kotlin:2.4.1")
     implementation("org.tinylog:tinylog-impl:2.4.1")
+//    implementation("org.junit.jupiter:junit-jupiter:5.7.0")
+//    implementation("org.junit.jupiter:junit-jupiter:5.7.0")
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.6.0")
     implementation("org.jetbrains.kotlin:kotlin-script-runtime:1.6.0")
@@ -26,14 +28,8 @@ java {
 tasks {
 
     getByName<Test>("test") {
-        useJUnitPlatform()
+        useJUnit()
+//        useJUnitPlatform()
     }
-
-//    jar {
-//        manifest {
-//            attributes(mapOf("Implementation-Title" to project.name,
-//                "Implementation-Version" to project.version))
-//        }
-//    }
 
 }
