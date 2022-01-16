@@ -1,4 +1,4 @@
-package `pig-latin`
+package pig_latin
 
 object PigLatin {
 

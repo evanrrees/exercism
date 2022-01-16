@@ -1,4 +1,4 @@
-package `pig-latin`
+package pig_latin
 
 import org.junit.Test
 import org.junit.runner.RunWith
