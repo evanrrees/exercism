@@ -1,4 +1,4 @@
-package `rna-transcription`
+package rna_transcription
 
 import org.junit.Test
 import kotlin.test.assertEquals
