@@ -1,15 +1,11 @@
 package custom_set
 
-class CustomSet(vararg values: Int) : LinkedHashSet<Int>(values.size) {
+class CustomSet(vararg elements: Int) : HashSet<Int>(elements.asList()) {
 
-    init {
-        for (element in values) add(element)
-    }
+    fun isSubset(other: CustomSet) = all { it in other }
 
-    fun isSubset(other: CustomSet): Boolean = intersection(other) == this
+    fun intersection(other: CustomSet) = intersect(other).toCollection(CustomSet())
 
-    fun isDisjoint(other: CustomSet): Boolean = intersection(other).isEmpty()
-
-    fun intersection(other: CustomSet): CustomSet = intersect(other).toCollection(CustomSet())
+    fun isDisjoint(other: CustomSet) = none { it in other }
 
 }
