@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Exercism.iml" filepath="$PROJECT_DIR$/.idea/Exercism.iml" />
-      <module fileurl="file://$PROJECT_DIR$/kotlin/interface/interface.iml" filepath="$PROJECT_DIR$/kotlin/interface/interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/python/python.iml" filepath="$PROJECT_DIR$/python/python.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kotlin/utils/utils.iml" filepath="$PROJECT_DIR$/kotlin/utils/utils.iml" />
     </modules>
   </component>
 </project>
