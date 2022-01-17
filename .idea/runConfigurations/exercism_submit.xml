@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="exercism_submit" type="BashProRunConfiguration" folderName="exercism" show_console_on_std_err="true" show_console_on_std_out="true">
     <option name="defaultInterpreter" value="bash" />
-    <scriptContent>exercism submit &quot;$1/&quot;*.kt</scriptContent>
+    <scriptContent>exercism submit &quot;$1&quot;/*.kt</scriptContent>
     <option name="scriptParameters" value="$FilePrompt$" />
     <option name="sourceType" value="snippet" />
     <option name="workingDirectory" value="$PROJECT_DIR$/kotlin/src/main/kotlin" />
