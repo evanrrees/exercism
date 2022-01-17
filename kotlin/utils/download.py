@@ -70,6 +70,8 @@ def relocate_md(workspace: str, nice_name: str, download_dir: str) -> list[str]:
     created_files: list[str] = []
     for orig_md in glob(f'{download_dir}/*.md'):
         base_md: str = basename(orig_md)
+        if base_md == 'HELP.md':
+            continue
         dest_md: str = f'{workspace}/kotlin/src/main/resources/{nice_name}/{base_md}'
         os.rename(orig_md, dest_md)
         created_files.append(dest_md)
