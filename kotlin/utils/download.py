@@ -38,9 +38,9 @@ def write_with_header(orig_kt: str, dest_kt: str, nice_name: str):
     with open(orig_kt, 'r') as fi, open(dest_kt, 'w') as fo:
         fo.write(f'package {nice_name}\n\n')
         for line in fi:
-            if is_test and line.endswith('Ignore'):
+            if is_test and line.endswith('Ignore\n'):
                 continue
-            fo.write(f'{line}\n')
+            fo.write(f'{line}')
 
 
 def make_file_hierarchy(workspace: str, nice_name: str) -> list[str]:
