@@ -3,42 +3,32 @@ package dominoes
 internal class ChainNotFoundException(msg: String) : RuntimeException(msg)
 
 internal data class Domino(val left: Int, val right: Int) {
-
     fun flipped() = Domino(right, left)
-
-    fun matchWith(other: Domino): Domino? = when (right) {
-        other.left -> other
-        other.right -> other.flipped()
-        else -> null
-    }
-
 }
 
 internal object Dominoes {
 
     fun formChain(inputDominoes: List<Domino>): List<Domino> {
-        if (inputDominoes.isEmpty())
-            return inputDominoes
+        if (inputDominoes.isEmpty()) return inputDominoes
         for (start in inputDominoes) {
-            var chain = dfs(inputDominoes - start, start, listOf(start))
-            if (chain.isEmpty())
-                chain = dfs(inputDominoes - start, start.flipped(), listOf(start.flipped()))
-            if (chain.isNotEmpty())
-                return chain.takeIf { it.first().left == it.last().right }
-                    ?: throw ChainNotFoundException("")
+            val chain = dfs(inputDominoes - start, listOf(start))
+            if (chain.isNotEmpty()) return chain
         }
         throw ChainNotFoundException("")
     }
 
-    fun dfs(dominoes: List<Domino>, current: Domino, chain: List<Domino>): List<Domino> {
-        if (dominoes.isEmpty()) return chain
+    fun dfs(dominoes: List<Domino>, chain: List<Domino>): List<Domino> {
+        if (dominoes.isEmpty() && chain.first().left == chain.last().right) return chain
         else {
             for (next in dominoes) {
-                val matched = current.matchWith(next)
-                if (matched != null) {
-                    val newChain = dfs(dominoes - next, matched, chain + matched)
-                    if (newChain.isNotEmpty()) return newChain
+                val new = when {
+                    next.left == chain.last().right -> dfs(dominoes - next, chain + next)
+                    next.right == chain.first().left -> dfs(dominoes - next, listOf(next) + chain)
+                    next.right == chain.last().right -> dfs(dominoes - next, chain + next.flipped())
+                    next.left == chain.first().left -> dfs(dominoes - next, listOf(next.flipped()) + chain)
+                    else -> emptyList()
                 }
+                if (new.isNotEmpty()) return new
             }
             return emptyList()
         }
