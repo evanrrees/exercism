@@ -5,21 +5,22 @@ object SumOfMultiples {
     tailrec fun gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
     fun lcm(a: Int, b: Int) = a * b / gcd(a, b)
 
-    fun sum(factors: Set<Int>, limit: Int): Int {
-        val realFactors = factors.filter { it in 1..limit }.toMutableList()
-        realFactors.retainAll { f -> realFactors.none { it != f && it % f == 0 } }
+    tailrec fun sum(factors: Set<Int>, limit: Int, sum: Int = 0, coef: Int = 1): Int {
+        val realFactors = factors.filter { it in 1..limit }
+        val newFactors = mutableSetOf<Int>()
         var total = 0
         for ((i, factor) in realFactors.withIndex()) {
-            var n = (limit - 1) / factor
+            val n = (limit - 1) / factor
             total += factor * n * (n + 1) / 2
             for (j in i + 1 .. realFactors.lastIndex) {
                 if (j > realFactors.lastIndex) continue
-                val unfactor = lcm(factor, realFactors[j])
-                n = (limit - 1) / unfactor
-                total -= unfactor * n * (n + 1) / 2
+                newFactors += lcm(factor, realFactors[j])
             }
         }
-        return total
+        return if (newFactors.isEmpty())
+            sum + coef * total
+        else
+            sum(newFactors.toSortedSet(), limit, sum + coef * total, coef * -1)
     }
 
 }
