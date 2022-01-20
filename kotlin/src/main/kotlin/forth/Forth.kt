@@ -46,26 +46,15 @@ internal class Forth {
 
     fun defineCustomOp(ops: List<String>) {
         val name = ops.first()
-        if (name.toIntOrNull() != null) throw IllegalOperationException(word=name)
-        customOperations[name] = { evaluateLine(ops.drop(1)).invoke() }
-        if (name in operations) {
+        if (name.toIntOrNull() != null)
+            throw IllegalOperationException(word=name)
+        customOperations[name] = { evaluateLine(ops.drop(1)) }
+        if (name in operations)
             operations[name] = customOperations.getValue(name)
-        }
-//        operations[name] = {
-//            for (op in ops.drop(1)) {
-//                if (op in operations) operations.getValue(op).invoke()
-//                else if (op.toIntOrNull() != null) {
-//                    stack += op.toInt()
-//                } else {
-//                    throw UndefinedOperationException(word=op)
-//                }
-//            }
-//        }
-//        return operations.getValue(name)
     }
 
 
-    fun evaluateLine(line: List<String>): () -> Unit = {
+    fun evaluateLine(line: List<String>) {
         val iterator = line.iterator()
         while (iterator.hasNext()) {
             var op = iterator.next().lowercase()
@@ -90,7 +79,7 @@ internal class Forth {
     fun evaluate(vararg lines: String): List<Int> {
         if (lines.isEmpty()) throw EmptyStackException()
         try {
-            for (line in lines) evaluateLine(line.split(" ")).invoke()
+            for (line in lines) evaluateLine(line.split(" "))
 //            for (expr in callStack) expr.invoke()
         } catch (e: Exception) {
             throw when (e) {
