@@ -42,22 +42,26 @@ internal class Forth {
             "over" to { stack += getOperands(2).let { it.takeLast(1) + it } },
         )
 
-//    private val customOperations = mutableMapOf<String, () -> Unit>()
+    private val customOperations = mutableMapOf<String, () -> Unit>()
 
-    fun defineCustomOp(ops: List<String>): () -> Unit {
+    fun defineCustomOp(ops: List<String>) {
         val name = ops.first()
         if (name.toIntOrNull() != null) throw IllegalOperationException(word=name)
-        operations[name] = {
-            for (op in ops.drop(1)) {
-                if (op in operations) operations.getValue(op).invoke()
-                else if (op.toIntOrNull() != null) {
-                    stack += op.toInt()
-                } else {
-                    throw UndefinedOperationException(word=op)
-                }
-            }
+        customOperations[name] = { evaluateLine(ops.drop(1)).invoke() }
+        if (name in operations) {
+            operations[name] = customOperations.getValue(name)
         }
-        return operations.getValue(name)
+//        operations[name] = {
+//            for (op in ops.drop(1)) {
+//                if (op in operations) operations.getValue(op).invoke()
+//                else if (op.toIntOrNull() != null) {
+//                    stack += op.toInt()
+//                } else {
+//                    throw UndefinedOperationException(word=op)
+//                }
+//            }
+//        }
+//        return operations.getValue(name)
     }
 
 
@@ -67,6 +71,7 @@ internal class Forth {
             var op = iterator.next().lowercase()
             when {
                 op in operations -> operations.getValue(op).invoke()
+                op in customOperations -> customOperations.getValue(op).invoke()
                 op == ":" -> {
                     val ops = mutableListOf<String>()
                     op = iterator.next()
@@ -74,7 +79,7 @@ internal class Forth {
                         ops += op
                         op = iterator.next()
                     }
-                    defineCustomOp(ops).invoke()
+                    defineCustomOp(ops)
                 }
                 op.toIntOrNull() != null -> stack += op.toInt()
                 else -> throw UndefinedOperationException(word=op)
