@@ -4,7 +4,7 @@ import org.junit.Test
 import java.math.BigInteger
 import kotlin.test.assertEquals
 
-class BoardTest {
+internal class BoardTest {
 
     @Test
     fun `per square - 1`() = assertGrainsEqual(1, 1)
