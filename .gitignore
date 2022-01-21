@@ -11,3 +11,5 @@ __pycache__/
 *.iml
 *.bak
 .DS_Store
+kotlin/utils/gen
+*.g4
