@@ -2,8 +2,8 @@ package robot_simulator
 
 internal class Robot(position: GridPosition = GridPosition(), orientation: Orientation = Orientation.NORTH) {
 
-    val orientation: Orientation get() = Orientation.values()[o]
     val gridPosition: GridPosition get() = GridPosition(x, y)
+    val orientation: Orientation get() = Orientation.values()[o]
 
     private var x = position.x
     private var y = position.y
