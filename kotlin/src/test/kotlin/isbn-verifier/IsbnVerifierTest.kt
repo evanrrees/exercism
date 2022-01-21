@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class IsbnVerifierTest {
+internal class IsbnVerifierTest {
     @Test
     fun `valid | regular isbn`() = assertValid("3-598-21508-8")
 

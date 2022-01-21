@@ -3,7 +3,7 @@ package `largest-series-product`
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class SeriesTest {
+internal class SeriesTest {
 
     @Test
     fun `corner | span equals length`() = assertLSPEquals("29", 2, 18)

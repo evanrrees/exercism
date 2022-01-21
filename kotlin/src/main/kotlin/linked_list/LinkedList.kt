@@ -1,6 +1,6 @@
 package linked_list
 
-class Deque<T> {
+internal class Deque<T> {
 
     val list = mutableListOf<T>()
 

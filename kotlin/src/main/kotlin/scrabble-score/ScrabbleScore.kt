@@ -1,6 +1,6 @@
 package `scrabble-score`
 
-object ScrabbleScore {
+internal object ScrabbleScore {
 
     private fun scoreLetter(c: Char) = when (c.uppercaseChar()) {
         'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'    -> 1

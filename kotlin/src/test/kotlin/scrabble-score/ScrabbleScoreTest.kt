@@ -6,7 +6,7 @@ import org.junit.runners.Parameterized
 import kotlin.test.assertEquals
 
 @RunWith(Parameterized::class)
-class ScrabbleScoreTest(val input: String, val expectedOutput: Int) {
+internal class ScrabbleScoreTest(val input: String, val expectedOutput: Int) {
 
     companion object {
         @JvmStatic

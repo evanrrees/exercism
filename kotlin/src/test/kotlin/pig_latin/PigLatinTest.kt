@@ -6,7 +6,7 @@ import org.junit.runners.Parameterized
 import kotlin.test.assertEquals
 
 @RunWith(Parameterized::class)
-class PigLatinTest(val input: String, val expectedOutput: String) {
+internal class PigLatinTest(val input: String, val expectedOutput: String) {
 
     companion object {
         @JvmStatic

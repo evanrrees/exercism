@@ -3,7 +3,7 @@ package `reverse-string`
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class ReverseStringTest {
+internal class ReverseStringTest {
     @Test
     fun `empty string`() = assertEquals("", reverse(""))
 

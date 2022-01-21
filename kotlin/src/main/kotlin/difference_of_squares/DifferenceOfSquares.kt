@@ -1,6 +1,6 @@
 package difference_of_squares
 
-class Squares(val n: Long) {
+internal class Squares(val n: Long) {
 
     fun sumOfSquares() = (2 * n + 1) * n * (n + 1) / 6
 

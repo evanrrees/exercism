@@ -1,6 +1,6 @@
 package sieve
 
-object Sieve {
+internal object Sieve {
 
     fun primesUpTo(upperBound: Int): List<Int> {
         if (upperBound < 3) return (2..upperBound).toList()

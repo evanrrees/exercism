@@ -4,7 +4,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import `resistor-color-duo`.Color.*
 
-class ResistorColorTrioTest {
+internal class ResistorColorTrioTest {
 
     @Test
     fun `orange orange black`() = assertEquals("33 ohms", ResistorColorTrio.text(ORANGE, ORANGE, BLACK))

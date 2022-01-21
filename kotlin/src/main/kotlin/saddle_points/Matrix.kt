@@ -1,8 +1,8 @@
 package saddle_points
 
-data class MatrixCoordinate(val row: Int, val col: Int)
+internal data class MatrixCoordinate(val row: Int, val col: Int)
 
-data class Matrix(val data: List<List<Int>>) {
+internal data class Matrix(val data: List<List<Int>>) {
     val saddlePoints: Set<MatrixCoordinate> = mutableSetOf()
     init {
         saddlePoints as MutableSet

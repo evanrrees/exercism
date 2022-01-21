@@ -4,7 +4,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import yacht.YachtCategory.*
 
-class YachtTest {
+internal class YachtTest {
 
     @Test
     fun yacht() = assertEquals(50, Yacht.solve(YACHT, 5, 5, 5, 5, 5))

@@ -1,6 +1,6 @@
 package crypto_square
 
-object CryptoSquare {
+internal object CryptoSquare {
 
     fun ciphertext(plaintext: String): String {
         val normalized = plaintext.filter(Char::isLetterOrDigit).lowercase()

@@ -1,6 +1,6 @@
 package rotational_cipher
 
-class RotationalCipher(val key: Int) {
+internal class RotationalCipher(val key: Int) {
 
     fun encode(text: String) = buildString(text.length) { text.forEach { append(encode(it)) } }
 
@@ -8,5 +8,5 @@ class RotationalCipher(val key: Int) {
 
 }
 
-val Char.offset get() = if (isLowerCase()) 'a' else 'A'
-val Char.ordinal get() = this - offset
+internal val Char.offset get() = if (isLowerCase()) 'a' else 'A'
+internal val Char.ordinal get() = this - offset

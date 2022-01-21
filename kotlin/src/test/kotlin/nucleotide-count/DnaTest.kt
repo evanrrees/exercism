@@ -3,7 +3,7 @@ package `nucleotide-count`
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class DnaTest {
+internal class DnaTest {
 
     @Test
     fun emptyDnaStringHasNoNucleotides() {

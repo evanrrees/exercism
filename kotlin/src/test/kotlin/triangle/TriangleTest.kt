@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class TriangleTest {
+internal class TriangleTest {
 
     @Test
     fun `equilateral - all sides are equal`() {

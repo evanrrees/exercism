@@ -1,3 +1,3 @@
 package `reverse-string`
 
-fun reverse(input: String) = input.reversed()
+internal fun reverse(input: String) = input.reversed()

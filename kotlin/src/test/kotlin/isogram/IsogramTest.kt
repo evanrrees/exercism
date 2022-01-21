@@ -6,7 +6,7 @@ import org.junit.runners.Parameterized
 import kotlin.test.assertEquals
 
 @RunWith(Parameterized::class)
-class IsogramTest(val input: String, val expectedOutput: Boolean) {
+internal class IsogramTest(val input: String, val expectedOutput: Boolean) {
 
     companion object {
         @JvmStatic

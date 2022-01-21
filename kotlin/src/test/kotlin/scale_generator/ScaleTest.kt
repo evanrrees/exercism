@@ -3,7 +3,7 @@ package scale_generator
 import kotlin.test.asserter
 import kotlin.test.Test
 
-class ScaleTest {
+internal class ScaleTest {
 
     // Test chromatic scales
     @Test

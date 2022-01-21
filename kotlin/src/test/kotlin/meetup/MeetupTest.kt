@@ -5,7 +5,7 @@ import java.time.DayOfWeek
 import java.time.LocalDate
 import kotlin.test.assertEquals
 
-class MeetupTest {
+internal class MeetupTest {
 
     @Test
     fun testMonteenthOfMay2013() {

@@ -3,7 +3,7 @@ package word_count
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class WordCountTest {
+internal class WordCountTest {
 
     @Test
     fun `one word`() = assertWordCountEqual(

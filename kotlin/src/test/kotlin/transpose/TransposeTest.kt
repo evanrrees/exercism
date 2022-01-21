@@ -3,7 +3,7 @@ package transpose
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class TransposeTest {
+internal class TransposeTest {
 
     @Test
     fun `empty string`() {

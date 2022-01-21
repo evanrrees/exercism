@@ -1,6 +1,6 @@
 package bob
 
-object Bob {
+internal object Bob {
     fun hey(input: String): String {
         val isYell = input.all { it.isUpperCase() || !it.isLetter() } && input.any { it.isLetter() }
         val isQuestion = input.trimEnd().endsWith('?')

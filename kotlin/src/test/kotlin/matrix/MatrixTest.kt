@@ -3,7 +3,7 @@ package matrix
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class MatrixTest {
+internal class MatrixTest {
 
     @Test
     fun `extract row from one number matrix`() {

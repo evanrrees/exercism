@@ -3,7 +3,7 @@ package `resistor-color-duo`
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class ResistorColorDuoTest {
+internal class ResistorColorDuoTest {
 
     @Test
     fun `brown and black`() = assertEquals(10, ResistorColorDuo.value(Color.BROWN, Color.BLACK))

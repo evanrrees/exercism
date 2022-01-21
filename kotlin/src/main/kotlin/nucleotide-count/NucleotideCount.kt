@@ -1,6 +1,6 @@
 package `nucleotide-count`
 
-class Dna(seq: String) {
+internal class Dna(seq: String) {
 
     init {
         require(!seq.contains(Regex("[^acgtACGT]")))

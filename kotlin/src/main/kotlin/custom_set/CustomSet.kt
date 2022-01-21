@@ -1,6 +1,6 @@
 package custom_set
 
-class CustomSet(vararg elements: Int) : HashSet<Int>(elements.asList()) {
+internal class CustomSet(vararg elements: Int) : HashSet<Int>(elements.asList()) {
 
     fun isSubset(other: CustomSet) = all { it in other }
 

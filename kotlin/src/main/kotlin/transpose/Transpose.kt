@@ -1,6 +1,6 @@
 package transpose
 
-object Transpose {
+internal object Transpose {
 
     fun transpose(rows: List<String>) =
         if (rows.isEmpty()) emptyList()

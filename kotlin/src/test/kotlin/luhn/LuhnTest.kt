@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class LuhnTest {
+internal class LuhnTest {
 
     @Test
     fun `invalid | single digit`() = assertInvalid("1")

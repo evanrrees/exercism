@@ -3,7 +3,7 @@ package `beer-song`
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class BeerSongTest {
+internal class BeerSongTest {
 
     @Test
     fun firstGenericVerse() {

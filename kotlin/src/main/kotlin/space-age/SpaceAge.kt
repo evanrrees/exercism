@@ -3,7 +3,7 @@ package `space-age`
 import kotlin.math.round
 import kotlin.math.pow
 
-class SpaceAge(private val ageInSeconds: Int) {
+internal class SpaceAge(private val ageInSeconds: Int) {
 
     private fun Double.roundTo(decimals: Int = 2) = 10.0.pow(decimals).let { round(this * it) / it }
     

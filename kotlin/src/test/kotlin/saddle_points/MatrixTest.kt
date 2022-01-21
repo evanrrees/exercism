@@ -4,7 +4,7 @@ import org.junit.Test
 import java.util.Collections.emptySet
 import kotlin.test.assertEquals
 
-class MatrixTest {
+internal class MatrixTest {
 
     @Test
     fun `single saddle point`() =

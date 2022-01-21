@@ -3,7 +3,7 @@ package acronym
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class AcronymTest {
+internal class AcronymTest {
     @Test
     fun `capitalized words`() = assertAcronymEquals(
             "Portable Network Graphics",

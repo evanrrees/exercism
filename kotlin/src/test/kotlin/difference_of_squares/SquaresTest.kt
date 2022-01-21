@@ -3,7 +3,7 @@ package difference_of_squares
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class SquaresTest {
+internal class SquaresTest {
 
     @Test
     fun squareOfSum1() {

@@ -3,7 +3,7 @@ package scale_generator
 import rna_transcription.complement
 
 
-enum class Tone {
+internal enum class Tone {
 
     A, AB, B, C, CD, D, DE, E, F, FG, G, GA;
 
@@ -29,13 +29,13 @@ enum class Tone {
     }
 }
 
-data class RealTone(val tone: Tone, val flat: Boolean = false) {
+internal data class RealTone(val tone: Tone, val flat: Boolean = false) {
     override fun toString(): String {
         return tone.toString(flat)
     }
 }
 
-class Scale(tonic: String) {
+internal class Scale(tonic: String) {
 
     private val _tonic = tonic.first().uppercase() + tonic.drop(1)
 

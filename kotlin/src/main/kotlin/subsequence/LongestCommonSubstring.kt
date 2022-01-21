@@ -1,6 +1,6 @@
 package subsequence
 
-object LongestPalindromicSubstring {
+internal object LongestPalindromicSubstring {
     fun lps(s: String): Int {
         val sp = if (s.length % 2 == 0) s.split("").joinToString("|") else s
         val radii = Array(sp.length) { 0 }
@@ -18,7 +18,7 @@ object LongestPalindromicSubstring {
     }
 }
 
-object LongestCommonSubstring {
+internal object LongestCommonSubstring {
     fun lcs(s: String, t: String): List<String> {
         val l = Array(s.length) { Array(t.length) { 0 } }
         var z = 0

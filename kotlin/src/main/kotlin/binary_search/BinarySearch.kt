@@ -1,6 +1,6 @@
 package binary_search
 
-object BinarySearch {
+internal object BinarySearch {
     tailrec fun search(list: List<Int>, item: Int, left: Int = 0, right: Int = list.lastIndex): Int {
         val mid: Int = left + ((right - left) shr 1)
         return when {

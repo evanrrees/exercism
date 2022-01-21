@@ -3,7 +3,7 @@ package `resistor-color-trio`
 import `resistor-color-duo`.Color
 import kotlin.math.pow
 
-object ResistorColorTrio {
+internal object ResistorColorTrio {
 
     fun text(vararg colors: Color): String {
         val ohms = colors.map { it.ordinal }.let { (a, b, c) -> (a * 1e1 + b) * 1e1.pow(c) }

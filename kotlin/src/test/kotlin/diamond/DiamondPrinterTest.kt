@@ -5,7 +5,7 @@ import org.junit.Assert.assertThat
 import org.junit.Before
 import org.junit.Test
 
-class DiamondPrinterTest {
+internal class DiamondPrinterTest {
 
     private lateinit var diamondPrinter: DiamondPrinter
 

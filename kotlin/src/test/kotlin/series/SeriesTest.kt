@@ -3,7 +3,7 @@ package series
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class SeriesTest {
+internal class SeriesTest {
 
     @Test
     fun slicesOfOneFromOne() {

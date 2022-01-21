@@ -5,7 +5,7 @@ import org.junit.Rule
 import org.junit.rules.ExpectedException
 import kotlin.test.assertEquals
 
-class HammingTest {
+internal class HammingTest {
 
     @Rule
     @JvmField

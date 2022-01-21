@@ -1,6 +1,6 @@
 package pig_latin
 
-object PigLatin {
+internal object PigLatin {
 
     class PigLatinError(message: String) : Error(message)
 

@@ -4,7 +4,7 @@ import org.junit.Test
 import java.lang.IllegalArgumentException
 import kotlin.test.assertEquals
 
-class PhoneNumberTest {
+internal class PhoneNumberTest {
 
     @Test
     fun `valid | simple number`() = assertNumberEquals("(223) 456-7890", "2234567890")

@@ -5,7 +5,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 import kotlin.test.assertTrue
 
-class RobotTest {
+internal class RobotTest {
 
     companion object {
         val EXPECTED_ROBOT_NAME_PATTERN = Regex("[A-Z]{2}\\d{3}")

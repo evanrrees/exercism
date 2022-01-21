@@ -1,7 +1,7 @@
 package bank_account
 
 
-class BankAccount {
+internal class BankAccount {
 
     private var open = true
 

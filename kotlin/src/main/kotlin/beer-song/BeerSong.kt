@@ -2,7 +2,7 @@ package `beer-song`
 
 import java.util.*
 
-object BeerSong {
+internal object BeerSong {
 
     fun verse(n: Int): String {
         fun numBottles(n: Int) = if (n == 0) "no more" else if (n < 0) "99" else "$n"

@@ -6,7 +6,7 @@ import java.time.LocalDate
  *
  * [TEENTH] indicates that the English ordinal of the day ends in 'teenth', i.e. the thirteenth through nineteenth.
  */
-enum class MeetupSchedule {
+internal enum class MeetupSchedule {
 
     FIRST, SECOND, THIRD, FOURTH, LAST, TEENTH;
 

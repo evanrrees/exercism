@@ -1,6 +1,6 @@
 package minesweeper
 
-data class MinesweeperBoard(val board: List<String>) {
+internal data class MinesweeperBoard(val board: List<String>) {
 
     val offsets = listOf(-1, 0, 1)
     fun withNumbers(): List<String> {

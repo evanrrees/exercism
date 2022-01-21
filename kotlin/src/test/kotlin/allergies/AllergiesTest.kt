@@ -5,7 +5,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class AllergiesTest {
+internal class AllergiesTest {
     @Test
     fun `eggs | not allergic to anything`() = assertIsNotAllergic(0, Allergen.EGGS)
 

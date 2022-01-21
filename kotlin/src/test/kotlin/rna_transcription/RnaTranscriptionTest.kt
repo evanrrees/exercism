@@ -3,7 +3,7 @@ package rna_transcription
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class RnaTranscriptionTest {
+internal class RnaTranscriptionTest {
     @Test
     fun `empty RNA` ()= assertEquals("", transcribeToRna(""))
 

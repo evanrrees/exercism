@@ -1,6 +1,6 @@
 package subsequence
 
-object LongestCommonSubsequence {
+internal object LongestCommonSubsequence {
     fun lcs(x: CharSequence, y: CharSequence) {
         val l = Array(x.length + 1) { Array(y.length + 1) { 0 } }
         for (i in 1..x.length) {

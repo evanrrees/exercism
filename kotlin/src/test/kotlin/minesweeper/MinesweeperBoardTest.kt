@@ -5,7 +5,7 @@ import org.junit.Test
 import org.junit.rules.ExpectedException
 import kotlin.test.assertEquals
 
-class MinesweeperBoardTest {
+internal class MinesweeperBoardTest {
 
     /*
      * See https://github.com/junit-team/junit4/wiki/Rules for information on JUnit Rules in general and

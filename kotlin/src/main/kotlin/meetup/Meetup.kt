@@ -12,7 +12,7 @@ import java.time.YearMonth
  * @param year the year to represent, from MIN_YEAR to MAX_YEAR.
  * @see MeetupSchedule
  */
-class Meetup(private val month: Int, private val year: Int) {
+internal class Meetup(private val month: Int, private val year: Int) {
 
     /** Gets a sequence of the dates in this YearMonth. */
     private val daySequence: Sequence<LocalDate>

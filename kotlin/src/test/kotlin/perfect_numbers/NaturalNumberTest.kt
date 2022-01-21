@@ -4,7 +4,7 @@ import org.junit.Test
 
 import org.junit.Assert.assertEquals
 
-class NaturalNumberTest {
+internal class NaturalNumberTest {
 
     @Test
     fun smallPerfectNumberIsClassifiedCorrectly() {

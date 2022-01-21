@@ -3,7 +3,7 @@ package sum_of_multiples
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class SumOfMultiplesTest {
+internal class SumOfMultiplesTest {
     @Test
     fun `no multiples within limit`() =
             assertEquals(0, SumOfMultiples.sum(setOf(3, 5), 1))

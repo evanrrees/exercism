@@ -1,7 +1,7 @@
 package yacht
 
 
-enum class YachtCategory(val score: List<Int>.() -> Int) {
+internal enum class YachtCategory(val score: List<Int>.() -> Int) {
     ONES({ count { it == 1 } }),
     TWOS({ 2 * count { it == 2 } }),
     THREES({ 3 * count { it == 3 } }),

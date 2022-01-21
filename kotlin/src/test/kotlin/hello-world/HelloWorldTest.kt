@@ -3,7 +3,7 @@ package `hello-world`
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class HelloWorldTest {
+internal class HelloWorldTest {
 
     @Test
     fun helloWorldTest() {

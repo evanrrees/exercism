@@ -1,5 +1,5 @@
 package `hello-world`
 
-fun hello(): String {
+internal fun hello(): String {
    return "Hello, World!"
 }

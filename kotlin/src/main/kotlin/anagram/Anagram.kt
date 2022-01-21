@@ -1,6 +1,6 @@
 package anagram
 
-class Anagram(s: String) {
+internal class Anagram(s: String) {
 
     private val lower = s.lowercase()
     private val target = lower.toList().sorted()

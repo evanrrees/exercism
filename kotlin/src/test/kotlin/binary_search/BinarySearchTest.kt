@@ -3,7 +3,7 @@ package binary_search
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class BinarySearchTest {
+internal class BinarySearchTest {
 
     @Test
     fun `finds value in array with one element`() =

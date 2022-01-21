@@ -4,7 +4,7 @@ import org.junit.Before
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class DequeTest {
+internal class DequeTest {
     private lateinit var subject: Deque<Int>
 
     @Before

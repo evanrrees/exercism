@@ -6,7 +6,7 @@ import org.junit.runners.Parameterized
 import kotlin.test.assertEquals
 
 @RunWith(Parameterized::class)
-class RomanNumeralsTest(val input: Int, val expectedOutput: String) {
+internal class RomanNumeralsTest(val input: Int, val expectedOutput: String) {
 
     companion object {
         @JvmStatic

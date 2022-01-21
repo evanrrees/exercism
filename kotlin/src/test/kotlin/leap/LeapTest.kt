@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class LeapTest {
+internal class LeapTest {
     @Test
     fun `not leap | not divisible by 4`() = assertYearIsCommon(2015)
 

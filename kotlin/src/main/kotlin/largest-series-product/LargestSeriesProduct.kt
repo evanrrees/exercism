@@ -1,6 +1,6 @@
 package `largest-series-product`
 
-class Series(s: String) {
+internal class Series(s: String) {
 
     init {
         require(s.all(Char::isDigit) || s.isEmpty())

@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 //import RunLengthEncoding.encode
 //import RunLengthEncoding.decode
 
-class RunLengthEncodingTest {
+internal class RunLengthEncodingTest {
 
     @Test
     fun `encode_empty string`() = assertEquals("", encode(""))

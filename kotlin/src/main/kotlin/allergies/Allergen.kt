@@ -1,6 +1,6 @@
 package allergies
 
-enum class Allergen(val score: Int) {
+internal enum class Allergen(val score: Int) {
     EGGS(1),
     PEANUTS(2),
     SHELLFISH(4),

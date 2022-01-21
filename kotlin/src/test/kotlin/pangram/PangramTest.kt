@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class PangramTest {
+internal class PangramTest {
 
     @Test
     fun emptySentence() {

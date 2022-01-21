@@ -3,7 +3,7 @@ package `resistor-color`
 import kotlin.test.assertEquals
 import kotlin.test.Test
 
-class ResistorColorTest {
+internal class ResistorColorTest {
 
     @Test
     fun testBlackColorCode() = assertEquals(0, ResistorColor.colorCode("black"))

@@ -6,7 +6,7 @@ import org.junit.runners.Parameterized
 import kotlin.test.assertEquals
 
 @RunWith(Parameterized::class)
-class RaindropsTest(val input: Int, val expectedOutput: String) {
+internal class RaindropsTest(val input: Int, val expectedOutput: String) {
 
     companion object {
         @JvmStatic

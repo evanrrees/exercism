@@ -1,6 +1,6 @@
 package `roman-numerals`
 
-object RomanNumerals {
+internal object RomanNumerals {
     private const val ones = "IXCM"
     private const val fives = "VLD"
     fun value(n: Int) = "$n".run {

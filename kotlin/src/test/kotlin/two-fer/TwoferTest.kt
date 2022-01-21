@@ -3,7 +3,7 @@ package `two-fer`
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class TwoferTest {
+internal class TwoferTest {
 
     @Test
     fun noNameGiven() {

@@ -1,6 +1,6 @@
 package pangram
 
-object Pangram {
+internal object Pangram {
 
     fun isPangram(input: String) = input.lowercase().run { ('a'..'z').all { it in this } }
 }

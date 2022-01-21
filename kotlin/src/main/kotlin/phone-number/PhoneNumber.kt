@@ -1,6 +1,6 @@
 package `phone-number`
 
-class PhoneNumber(number: String) {
+internal class PhoneNumber(number: String) {
 
     val number: String =
         Regex("^\\D*1?\\D*([2-9]\\d{2})\\D*([2-9]\\d{2})\\D*(\\d{4})\\D*$").matchEntire(number)

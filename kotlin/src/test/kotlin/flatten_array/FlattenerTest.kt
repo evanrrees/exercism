@@ -3,7 +3,7 @@ package flatten_array
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class FlattenerTest {
+internal class FlattenerTest {
 
     @Test
     fun flatListIsUnchanged() {

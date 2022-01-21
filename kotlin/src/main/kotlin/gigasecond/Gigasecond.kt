@@ -3,7 +3,7 @@ package gigasecond
 import java.time.LocalDate
 import java.time.LocalDateTime
 
-class Gigasecond(localDateTime: LocalDateTime) {
+internal class Gigasecond(localDateTime: LocalDateTime) {
 
     val date: LocalDateTime = localDateTime
         get() = field.plusSeconds(1_000_000_000)

@@ -2,7 +2,7 @@ package subsequence
 
 import org.junit.Test
 
-class LongestCommonSubsequenceTest {
+internal class LongestCommonSubsequenceTest {
     @Test
     fun lcs() {
         LongestCommonSubsequence.lcs("GAC", "AGCAT")

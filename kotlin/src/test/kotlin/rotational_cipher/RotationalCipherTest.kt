@@ -3,7 +3,7 @@ package rotational_cipher
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class RotationalCipherTest {
+internal class RotationalCipherTest {
 
     @Test
     fun testRotateLowercaseABy0() {

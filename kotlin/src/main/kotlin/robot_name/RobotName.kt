@@ -1,6 +1,6 @@
 package robot_name
 
-class Robot {
+internal class Robot {
 
     val name: String get() = _name
     private var _name: String = generateName()

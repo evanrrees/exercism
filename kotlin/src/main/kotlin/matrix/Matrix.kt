@@ -1,7 +1,7 @@
 package matrix
 
 /** Provides access to the rows and columns of a matrix passed as a string. */
-class Matrix(matrixAsString: String) {
+internal class Matrix(matrixAsString: String) {
 
     /** Internal representation of matrix parsed to integers. */
     private val data: List<List<Int>> =

@@ -3,7 +3,7 @@ package wordy
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class WordyTest {
+internal class WordyTest {
 
     @Test
     fun `just a number`() = assertEquals(5, Wordy.answer("What is 5?"))

@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
-class BankAccountTest {
+internal class BankAccountTest {
 
     @Test
     fun zeroBalanceWhenOpened() {

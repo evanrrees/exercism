@@ -3,7 +3,7 @@ package secret_handshake
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class HandshakeCalculatorTest {
+internal class HandshakeCalculatorTest {
 
     @Test
     fun testThatInput1YieldsAWink() {

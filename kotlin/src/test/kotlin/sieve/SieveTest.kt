@@ -3,7 +3,7 @@ package sieve
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class SieveTest {
+internal class SieveTest {
 
     @Test
     fun noPrimesUnder2() {

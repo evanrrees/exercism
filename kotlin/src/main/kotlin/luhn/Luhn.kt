@@ -1,6 +1,6 @@
 package luhn
 
-object Luhn {
+internal object Luhn {
 
     fun isValid(candidate: String) =
         candidate.filterNot(Char::isWhitespace).takeIf { it.length > 1 && it.all(Char::isDigit) }

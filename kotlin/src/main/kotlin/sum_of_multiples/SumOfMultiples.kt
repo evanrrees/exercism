@@ -1,6 +1,6 @@
 package sum_of_multiples
 
-object SumOfMultiples {
+internal object SumOfMultiples {
 
     fun sum(factors: Set<Int>, limit: Int): Int {
         if (factors.isEmpty()) return 0

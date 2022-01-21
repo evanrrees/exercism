@@ -3,7 +3,7 @@ package `space-age`
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class SpaceAgeTest {
+internal class SpaceAgeTest {
     @Test
     fun `age on Earth`() = assertYearsEqual(31.69, SpaceAge(1000000000).onEarth())
 

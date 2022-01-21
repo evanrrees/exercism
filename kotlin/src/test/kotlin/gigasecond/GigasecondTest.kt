@@ -6,7 +6,7 @@ import java.time.LocalDateTime
 import java.time.Month
 import kotlin.test.assertEquals
 
-class GigasecondTest {
+internal class GigasecondTest {
 
     @Test
     fun `date only specification of time`() {

@@ -3,7 +3,7 @@ package wordy
 import kotlin.math.pow
 
 
-object Wordy {
+internal object Wordy {
 
     fun answer(input: String): Int {
         val iterator = input.split(" ").iterator()

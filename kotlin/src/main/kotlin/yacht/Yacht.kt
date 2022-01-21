@@ -1,6 +1,6 @@
 package yacht
 
-object Yacht {
+internal object Yacht {
 
     fun solve(category: YachtCategory, vararg dice: Int) = category(dice.sorted())
 }

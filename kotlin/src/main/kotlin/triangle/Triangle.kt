@@ -1,6 +1,6 @@
 package triangle
 
-class Triangle<out T : Number>(vararg _sides: T) {
+internal class Triangle<out T : Number>(vararg _sides: T) {
 
     val sides = _sides.map { it.toDouble() }
 

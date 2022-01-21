@@ -1,8 +1,8 @@
 package `resistor-color`
 
-enum class Resistor { BLACK, BROWN, RED, ORANGE, YELLOW, GREEN, BLUE, VIOLET, GREY, WHITE }
+internal enum class Resistor { BLACK, BROWN, RED, ORANGE, YELLOW, GREEN, BLUE, VIOLET, GREY, WHITE }
 
-object ResistorColor {
+internal object ResistorColor {
 
     fun colorCode(input: String) = Resistor.valueOf(input.uppercase()).ordinal
 

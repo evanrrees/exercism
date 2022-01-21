@@ -4,7 +4,7 @@ import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class AnagramTest {
+internal class AnagramTest {
 
     @Test
     fun `no matches`() =

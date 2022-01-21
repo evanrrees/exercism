@@ -3,7 +3,7 @@ package bob
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class BobTest {
+internal class BobTest {
 
     @Test
     fun statingSomething() {
