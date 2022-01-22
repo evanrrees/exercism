@@ -2,16 +2,13 @@ package matching_brackets
 
 object MatchingBrackets {
 
-    fun isValid(input: String): Boolean {
-        val stack = mutableListOf<Char>()
-        for (c in input)
-            if (c in brackets.values) stack += c
-            else if (c in brackets)
-                if (stack.lastOrNull() == brackets[c]) stack.removeLast()
-                else return false
-        return stack.isEmpty()
+    fun isValid(string: String): Boolean {
+        val match = regex.find(string) ?: return string.none { it in brackets }
+        return isValid(string.replaceRange(match.range, ""))
     }
 
-    private val brackets = mapOf(')' to '(', ']' to '[', '}' to '{')
+    private val regex = Regex("\\[[^{(\\[)}\\]]*]|\\{[^{(\\[)}\\]]*}|\\([^{(\\[)}\\]]*\\)")
+
+    private val brackets = setOf('[', ']', '(', ')', '{', '}')
 
 }
