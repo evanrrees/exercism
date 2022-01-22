@@ -12,15 +12,21 @@ internal class BaseConverter(val base: Int, val digits: IntArray) {
 
     val base10 = digits.reduce { acc, i -> acc * base + i }
 
-    fun convertToBase(newBase: Int): IntArray {
+//    fun convertToBase(newBase: Int): IntArray {
+//        require(newBase > 1) { "Bases must be at least 2." }
+//        if (base10 == 0) return intArrayOf(0)
+//        val digits = mutableListOf<Int>()
+//        var num = base10
+//        while (num > 0) {
+//            digits.add(0, num % newBase)
+//            num /= newBase
+//        }
+//        return digits.toIntArray()
+//    }
+
+    tailrec fun convertToBase(newBase: Int, num: Int = base10, digits: IntArray = intArrayOf()): IntArray {
         require(newBase > 1) { "Bases must be at least 2." }
-        if (base10 == 0) return intArrayOf(0)
-        val digits = mutableListOf<Int>()
-        var num = base10
-        while (num > 0) {
-            digits.add(0, num % newBase)
-            num /= newBase
-        }
-        return digits.toIntArray()
+        return if (num < newBase) intArrayOf(num, *digits)
+        else convertToBase(newBase, num / newBase, intArrayOf(num % newBase, *digits))
     }
 }
