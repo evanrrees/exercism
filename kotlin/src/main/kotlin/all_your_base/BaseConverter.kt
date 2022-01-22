@@ -1,6 +1,6 @@
 package all_your_base
 
-class BaseConverter(val base: Int, val digits: IntArray) {
+internal class BaseConverter(val base: Int, val digits: IntArray) {
 
     init {
         require(base > 1) { "Bases must be at least 2." }
