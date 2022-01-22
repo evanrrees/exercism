@@ -1,22 +1,11 @@
 package all_your_base
 
-import org.junit.Assert.assertArrayEquals
+import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.ExpectedException
-import java.util.*
 
-class BaseConverterTest {
-
-    fun assertConversionEquals(fromBase: Int, digits: IntArray, toBase: Int, expectedDigits: IntArray) {
-        val baseConverter = BaseConverter(fromBase, digits)
-        val actualDigits = baseConverter.convertToBase(toBase)
-        assertArrayEquals(
-            "Expected digits: ${expectedDigits.asList()} but found digits: ${actualDigits.asList()}",
-            expectedDigits,
-            actualDigits
-        )
-    }
+internal class BaseConverterTest {
 
     /*
      * See https://github.com/junit-team/junit4/wiki/Rules for information on JUnit Rules in general and
@@ -27,116 +16,63 @@ class BaseConverterTest {
 
     @Test
     fun testSingleBitOneToDecimal() {
-//        assertConversionEquals(
-//            fromBase = 2,
-//            digits = intArrayOf(1),
-//            toBase = 10,
-//            expectedDigits = intArrayOf(1)
-//        )
-        val baseConverter = BaseConverter(2, intArrayOf(1))
-
-        val expectedDigits = intArrayOf(1)
-        val actualDigits = baseConverter.convertToBase(10)
-
-        assertArrayEquals(
-            "Expected digits: ${Arrays.toString(expectedDigits)} but found digits: ${Arrays.toString(actualDigits)}",
-            expectedDigits,
-            actualDigits)
+        assertConversionEquals(base = 2, digits = intArrayOf(1), newBase = 10, expected = intArrayOf(1))
     }
 
     @Test
     fun testBinaryToSingleDecimal() {
-        val baseConverter = BaseConverter(2, intArrayOf(1, 0, 1))
-
-        val expectedDigits = intArrayOf(5)
-        val actualDigits = baseConverter.convertToBase(10)
-
-        assertArrayEquals(
-            "Expected digits: ${Arrays.toString(expectedDigits)} but found digits: ${Arrays.toString(actualDigits)}",
-            expectedDigits,
-            actualDigits)
+        assertConversionEquals(base = 2, digits = intArrayOf(1, 0, 1), newBase = 10, expected = intArrayOf(5))
     }
 
     @Test
     fun testSingleDecimalToBinary() {
-        val baseConverter = BaseConverter(10, intArrayOf(5))
-
-        val expectedDigits = intArrayOf(1, 0, 1)
-        val actualDigits = baseConverter.convertToBase(2)
-
-        assertArrayEquals(
-            "Expected digits: ${Arrays.toString(expectedDigits)} but found digits: ${Arrays.toString(actualDigits)}",
-            expectedDigits,
-            actualDigits)
+        assertConversionEquals(base = 10, digits = intArrayOf(5), newBase = 2, expected = intArrayOf(1, 0, 1))
     }
 
     @Test
     fun testBinaryToMultipleDecimal() {
-        val baseConverter = BaseConverter(2, intArrayOf(1, 0, 1, 0, 1, 0))
-
-        val expectedDigits = intArrayOf(4, 2)
-        val actualDigits = baseConverter.convertToBase(10)
-
-        assertArrayEquals(
-            "Expected digits: ${Arrays.toString(expectedDigits)} but found digits: ${Arrays.toString(actualDigits)}",
-            expectedDigits,
-            actualDigits)
+        assertConversionEquals(
+            base = 2,
+            digits = intArrayOf(1, 0, 1, 0, 1, 0),
+            newBase = 10,
+            expected = intArrayOf(4, 2)
+        )
     }
 
     @Test
     fun testDecimalToBinary() {
-        val baseConverter = BaseConverter(10, intArrayOf(4, 2))
-
-        val expectedDigits = intArrayOf(1, 0, 1, 0, 1, 0)
-        val actualDigits = baseConverter.convertToBase(2)
-
-        assertArrayEquals(
-            "Expected digits: ${Arrays.toString(expectedDigits)} but found digits: ${Arrays.toString(actualDigits)}",
-            expectedDigits,
-            actualDigits)
+        assertConversionEquals(
+            base = 10,
+            digits = intArrayOf(4, 2),
+            newBase = 2,
+            expected = intArrayOf(1, 0, 1, 0, 1, 0)
+        )
     }
 
     @Test
     fun testTrinaryToHexadecimal() {
-        val baseConverter = BaseConverter(3, intArrayOf(1, 1, 2, 0))
-
-        val expectedDigits = intArrayOf(2, 10)
-        val actualDigits = baseConverter.convertToBase(16)
-
-        assertArrayEquals(
-            "Expected digits: ${Arrays.toString(expectedDigits)} but found digits: ${Arrays.toString(actualDigits)}",
-            expectedDigits,
-            actualDigits)
+        assertConversionEquals(base = 3, digits = intArrayOf(1, 1, 2, 0), newBase = 16, expected = intArrayOf(2, 10))
     }
 
     @Test
     fun testHexadecimalToTrinary() {
-        val baseConverter = BaseConverter(16, intArrayOf(2, 10))
-
-        val expectedDigits = intArrayOf(1, 1, 2, 0)
-        val actualDigits = baseConverter.convertToBase(3)
-
-        assertArrayEquals(
-            "Expected digits: ${Arrays.toString(expectedDigits)} but found digits: ${Arrays.toString(actualDigits)}",
-            expectedDigits,
-            actualDigits)
+        assertConversionEquals(base = 16, digits = intArrayOf(2, 10), newBase = 3, expected = intArrayOf(1, 1, 2, 0))
     }
 
     @Test
     fun test15BitInteger() {
-        val baseConverter = BaseConverter(97, intArrayOf(3, 46, 60))
-
-        val expectedDigits = intArrayOf(6, 10, 45)
-        val actualDigits = baseConverter.convertToBase(73)
-
-        assertArrayEquals(
-            "Expected digits: ${Arrays.toString(expectedDigits)} but found digits: ${Arrays.toString(actualDigits)}",
-            expectedDigits,
-            actualDigits)
+        assertConversionEquals(
+            base = 97,
+            digits = intArrayOf(3, 46, 60),
+            newBase = 73,
+            expected = intArrayOf(6, 10, 45)
+        )
     }
 
     @Test
     fun testEmptyDigits() {
+        assertThrows(IllegalArgumentException::class.java) { BaseConverter(2, intArrayOf()) }
+
         expectedException.expect(IllegalArgumentException::class.java)
         expectedException.expectMessage("You must supply at least one digit.")
 
@@ -145,15 +81,7 @@ class BaseConverterTest {
 
     @Test
     fun testSingleZero() {
-        val baseConverter = BaseConverter(10, intArrayOf(0))
-
-        val expectedDigits = intArrayOf(0)
-        val actualDigits = baseConverter.convertToBase(2)
-
-        assertArrayEquals(
-            "Expected digits: ${Arrays.toString(expectedDigits)} but found digits: ${Arrays.toString(actualDigits)}",
-            expectedDigits,
-            actualDigits)
+        assertConversionEquals(base = 10, digits = intArrayOf(0), newBase = 2, expected = intArrayOf(0))
     }
 
     @Test
@@ -240,5 +168,15 @@ class BaseConverterTest {
         expectedException.expectMessage("Bases must be at least 2.")
 
         baseConverter.convertToBase(-7)
+    }
+
+    private fun assertConversionEquals(base: Int, digits: IntArray, newBase: Int, expected: IntArray) {
+        val baseConverter = BaseConverter(base, digits)
+        val actualDigits = baseConverter.convertToBase(newBase)
+        assertArrayEquals(
+            "Expected digits: ${expected.asList()} but found digits: ${actualDigits.asList()}",
+            expected,
+            actualDigits
+        )
     }
 }
