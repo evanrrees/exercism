@@ -7,6 +7,7 @@ from subprocess import CompletedProcess
 import json
 from locale import getpreferredencoding as preferred_encoding
 from glob import glob
+import re
 
 
 def load_config() -> dict:
@@ -34,12 +35,15 @@ def load_meta(download_dir: str) -> tuple[dict, dict]:
 
 
 def write_with_header(orig_kt: str, dest_kt: str, nice_name: str):
+    regex: re.Pattern = re.compile('^(class|object|enum|interface|fun|val|var|data|typealias)')
     is_test: bool = orig_kt.endswith('Test.kt')
     with open(orig_kt, 'r') as fi, open(dest_kt, 'w') as fo:
         fo.write(f'package {nice_name}\n\n')
         for line in fi:
             if is_test and line.endswith('Ignore\n'):
                 continue
+            if regex.match(line):
+                line = f'internal {line}'
             fo.write(f'{line}')
 
 
