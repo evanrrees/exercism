@@ -4,7 +4,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
-class BinarySearchTreeTest {
+internal class BinarySearchTreeTest {
 
     @Test
     fun `data is retained`() {
