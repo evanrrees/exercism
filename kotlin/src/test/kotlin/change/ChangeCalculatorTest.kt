@@ -5,7 +5,7 @@ import org.junit.Test
 import org.junit.rules.ExpectedException
 import kotlin.test.assertEquals
 
-class ChangeCalculatorTest {
+internal class ChangeCalculatorTest {
 
     @Rule
     @JvmField

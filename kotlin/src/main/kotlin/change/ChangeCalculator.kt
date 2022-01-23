@@ -1,26 +1,23 @@
 package change
 
-class ChangeCalculator(coins: List<Int>) {
-    val coins = coins.sortedDescending()
-    var bestPath = emptyList<Int>()
-    fun bfs(total: Int, _coins: List<Int>, path: List<Int> = emptyList()) {
-        if (total == 0) {
-            if (path.size < bestPath.size || bestPath.isEmpty()) bestPath = path.toList()
-        } else if (total > 0) {
-            for ((index, c) in _coins.filter { it <= total }.withIndex()) {
-                if (total >= c) {
-                    bfs(total - c, _coins.drop(index), path + c)
-                    if (total == c) break
-                } else {
-                    bfs(total, _coins.drop(index + 1), path)
-                }
-            }
-        } else {
-            return
-        }
-    }
+internal class ChangeCalculator(coins: List<Int>) {
+    private val coins = coins.sortedDescending()
+
     fun computeMostEfficientChange(grandTotal: Int): List<Int> {
-        bfs(grandTotal, coins)
+        require(grandTotal >= 0) { "Negative totals are not allowed." }
+
+        var bestPath = emptyList<Int>()
+        fun dfs(total: Int, _coins: List<Int>, path: List<Int> = emptyList()) {
+            if (bestPath.isEmpty() || path.size < bestPath.size)
+                for ((index, c) in _coins.withIndex())
+                    if (c == total && (bestPath.isEmpty() || path.size + 1 < bestPath.size))
+                        bestPath = path + c
+                    else if (c < total)
+                        dfs(total - c, _coins.drop(index), path + c)
+        }
+
+        dfs(grandTotal, coins)
+        require(grandTotal == 0 || bestPath.isNotEmpty()) { "The total $grandTotal cannot be represented in the given currency." }
         return bestPath
     }
 }
