@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="download" type="PythonConfigurationType" factoryName="Python" folderName="exercism">
+  <configuration default="false" name="exercism_download" type="PythonConfigurationType" factoryName="Python">
     <module name="utils" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
