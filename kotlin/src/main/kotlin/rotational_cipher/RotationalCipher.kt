@@ -6,7 +6,10 @@ internal class RotationalCipher(val key: Int) {
 
     private fun encode(char: Char) = if (char.isLetter()) char.offset + (char.ordinal + key) % 26 else char
 
+    companion object {
+        private val Char.offset get() = if (isLowerCase()) 'a' else 'A'
+        private val Char.ordinal get() = this - offset
+    }
+
 }
 
-internal val Char.offset get() = if (isLowerCase()) 'a' else 'A'
-internal val Char.ordinal get() = this - offset
