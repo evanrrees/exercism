@@ -10,22 +10,18 @@ val Item.value get() = second
 operator fun Item.plus(other: Item) = Item(weight + other.weight, value + other.value)
 
 fun knapsack(maximumWeight: Int, items: List<Item>): Int {
-    if (items.isEmpty()) return 0
-    var best = Item(0, 0)
     val seen = BooleanArray(items.size)
-    fun helper2(knapsack: Item = Item(0, 0)) {
-        var checkBest = true
-        for (index in items.indices) {
-            if (!seen[index] && items[index].weight + knapsack.weight <= maximumWeight) {
-                checkBest = false
+    var bestValue = 0
+    fun helper(weight: Int = 0, value: Int = 0) {
+        for ((index, item) in items.withIndex()) {
+            if (!seen[index] && item.weight + weight <= maximumWeight) {
                 seen[index] = true
-                helper2(knapsack + items[index])
+                helper(weight + item.weight, value + item.value)
                 seen[index] = false
             }
         }
-        if (checkBest && knapsack.value > best.value)
-            best = knapsack
+        bestValue = maxOf(value, bestValue)
     }
-    helper2()
-    return  best.value
+    helper()
+    return bestValue
 }
